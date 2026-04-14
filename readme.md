@@ -1,51 +1,51 @@
-# SNmapPy - Network Analysis and WiFi Tool
+# SNmapPy - أداة تحليل السبكات مدعومه بالذكاء الاصطناعي 
 
-# New Update V2
-- Added Ai (Arabic)
-- Added in CLI Arabic
-- Added Root-Checker
-- Repleaced Book with DataSheet Simple
+# التحديث الاصدار ال3
+- جعلها تعتمد علي اللغه البشرية 
+- الاداة عربية بالكامل 
+- عمل ملف عربي دليل خاص بأداة Namp 
+- دعم متعدد لموديلات الذكاء الاصطناعي المختلفة
   
-## Overview
+## نبذة عامة عن الاداة
 
-SNmapPy is a Python-based network analysis and WiFi tool designed for ethical hacking and network security assessments. It leverages the `nmap` library to perform various network scans and provides a user-friendly interface for both beginners and experienced users.
+SNmapPy هي اداة مبنيه علي البايثون مخصصه لتحليل الشبكات
+باستعمال الذكاء الاصطناعي و الكتابه باللغه البشرية العادية ويقوم الذكاء الاصطناعي 
+بالفهم التلقائي والقيام بالعمل كاملا ومع حفظ التقرير تلقائيا ومعطي بشكل مفصل ومع امكانييه تغير
+موديل الذكاء الاصطناعي والتعديل في تكوينه الاساسي ومع دعم شامل للغة العربية
 
-**Author:** SayyadN
+**الناشر:** SayyadN | A225PS
 
-**Version:** 2.0
+**الاصدار_الحالي:** 3.0
 
-**Disclaimer:** This tool is for educational purposes only. Use responsibly and ethically.
+**تحذير:** استعملها بحذر ولا تغضب الله رب العالمين وتوكل علي الله 
 
-## Features
+## المميزات 
+-   **الذكاء الاصطناعي:**  يقوم بالعمل كاملا وفهم الاوامر المطلوبه واختيار الادق ويمكنك تخصيصه
+-   **تقرير مفصل:** حفظ التقاير بتاريخ الحلي لها (حسب التوقيت ) ومحلل بشكل مفصل
+-   **الكتابه بشكل طبيعي دون الاوامر:** الان تستطيع أن تخبر الذكاء لاصطناعي بما تريد وهوا سيختار الافضل لك 
 
--   **Port Scanning:** Scan for open ports on a target machine.
--   **OS Detection:** Identify the operating system of a target.
--   **Service Detection:** Determine the services running on open ports.
--   **Network Mapping:** Discover hosts on a network.
--   **Firewall Detection:** Attempt to identify firewall rules.
--   **Vulnerability Scanning:** Scan for common vulnerabilities.
--   **WiFi Scanning:** Gather information about WiFi networks.
--   **DNS Enumeration:** Perform DNS-related scans.
--   **SNMP Scanning:** Scan for SNMP-enabled devices.
--   **Protocol-Specific Scans:** Includes HTTP, FTP, SSH, Telnet, SMTP, POP3, IMAP, LDAP, RDP, SMB, MySQL, PostgreSQL, MongoDB, Redis, Elasticsearch, Docker, and Kubernetes scans.
--   **SSL Scanning:** Check SSL/TLS configuration.
--   **IPv6/IPv4 Support:** Perform scans on both IPv4 and IPv6 networks.
--   **WiFi Client Scanning:** Discover active clients on a WiFi network.
--   **Custom Scan:** Allows users to specify custom `nmap` arguments.
--   **AI Assistance:** Provides AI-powered help for troubleshooting and understanding scan results.
 
-## Requirements
+## المطلوب
+-   لاداعي للقلق بشأن هذا فيوجد ملف خاص ينصب لك المكتبات تلقائيا
 
--   Python 3.6+
--   `nmap` installed on your system.
+### مفاتيح الAPI
+هنا في الجزء الخاص من الكود تضع المطلوب طبقا للموديل وحاجتك ليه
 
-### Python Packages
+ --- إعدادات المحرك المركزية ---
+DEFAULT_MODEL = "gemini" # الخيار التلقائي: gemini, openai, or local
+GEMINI_API_KEY = "API"
+GEMINI_MODEL = "gemini-3-flash-preview"
+
+### المكتبات المستعلمة
 
 -   `python-nmap`
 -   `google-genai`
 -   `colorama`
 
-Bro Now Setup.sh in Linux Will Auto Install Nmap and Reqired Libs
-
-```bash
-sudo bash setup.sh
+## هيكل المشروع 
+- results --> مجلد يحفظ فيه التقارير 
+- sources --> مجلد يكون فيه ملف التكوين الخاص بالذكاء الاصطناعي وورقه الاداة
+- sources/ai_config.txt --> ملف تكوين الذكاء الاصطناعي 
+- sources/ورقة_Nmap.pdf --> ملف تشغيل اداة Nmap نفسها 
+- start.py --> ملف تشغيل الاداة نفسها
+- setup.sh --> ملف التنزيل التلقائي للمكتبات واعداد البيئة
