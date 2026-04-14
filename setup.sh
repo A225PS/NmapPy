@@ -6,7 +6,7 @@ set -e
 banner() {
     echo -e "\e[1;36m"
     echo "╔══════════════════════════════════════╗"
-    echo "║ 🔐 By Sayyad — Python Defender Pro  ║"
+    echo "║ 🔐 By Sayyad — Env Setup ║"
     echo "╚══════════════════════════════════════╝"
     echo -e "\e[0m"
 }
@@ -54,7 +54,7 @@ fi
 echo -e "\e[1;32m✅ Python and pip are ready.\e[0m"
 
 # 📦 الحزم المطلوبة
-PY_PACKAGES=("python-nmap" "google-genai" "colorama")
+PY_PACKAGES=("python-nmap" "google-genai" "colorama" )
 
 ALL_INSTALLED=true
 
@@ -82,30 +82,6 @@ for pkg in "${PY_PACKAGES[@]}"; do
     fi
 done
 
-# 🛠 تثبيت nmap
-echo -e "\n🔍 Checking for nmap..."
-if command_exists nmap; then
-    echo -e "✅ nmap is already installed."
-else
-    echo -e "📦 Installing nmap..."
-    if command_exists apt; then
-        sudo apt update && sudo apt install -y nmap
-    elif command_exists dnf; then
-        sudo dnf install -y nmap
-    elif command_exists yum; then
-        sudo yum install -y nmap
-    elif command_exists pacman; then
-        sudo pacman -Sy --noconfirm nmap
-    elif command_exists zypper; then
-        sudo zypper install -y nmap
-    elif command_exists apk; then
-        sudo apk add nmap
-    else
-        echo -e "\e[1;31m❌ Unknown package manager. Please install nmap manually.\e[0m"
-        exit 1
-    fi
-    ALL_INSTALLED=false
-fi
 
 # ✅ تقرير نهائي
 if $ALL_INSTALLED; then
